@@ -1,0 +1,178 @@
+/* -------------------------------------------------- */
+/* WRAPPER                                            */
+/* -------------------------------------------------- */
+
+.wrapper {
+  width: 100%;
+  height: 550px; /* FIX: Proper height so cards never overflow */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 2000px;
+}
+
+/* -------------------------------------------------- */
+/* INNER RING + BIG CARD SIZE, REDUCED GAP            */
+/* -------------------------------------------------- */
+
+.inner {
+  --w: clamp(190px, 19vw, 280px);
+  --h: clamp(230px, 22vw, 300px);
+
+  /* FIX: reduce translateZ so cards stay close & don't fly outside */
+  --translateZ: calc(var(--w) * 1.8); /* was 4.2 */
+
+  --rotateX: -14deg;
+
+  position: relative;
+  width: var(--w);
+  height: var(--h);
+  transform-style: preserve-3d;
+  animation: rotate 19s linear infinite;
+}
+
+/* ⭐ NEW — Pause rotation when class applied */
+.paused {
+  animation-play-state: paused !important;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotateX(var(--rotateX)) rotateY(0deg);
+  }
+  to {
+    transform: rotateX(var(--rotateX)) rotateY(360deg);
+  }
+}
+
+/* -------------------------------------------------- */
+/* CARD BASE STYLE                                    */
+/* -------------------------------------------------- */
+
+.card {
+  position: absolute;
+  inset: 0;
+
+  transform: rotateY(calc((360deg / var(--quantity)) * var(--index)))
+    translateZ(var(--translateZ));
+
+  border-radius: 22px;
+  overflow: hidden;
+  cursor: pointer;
+
+  /* Dynamic theme-based border */
+  border: 2px solid var(--card-border);
+
+  /* Theme-aware shadow */
+  box-shadow: 0 15px 45px var(--card-shadow),
+    0 0 18px rgba(var(--color-card), 0.3);
+
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.card:hover {
+  transform: rotateY(calc((360deg / var(--quantity)) * var(--index)))
+    translateZ(var(--translateZ)) scale(1.08) rotateX(4deg);
+
+  box-shadow: 0 25px 70px rgba(var(--color-card), 0.5),
+    0 0 35px var(--card-shadow);
+}
+
+/* -------------------------------------------------- */
+/* CARD IMAGE                                         */
+/* -------------------------------------------------- */
+
+.img {
+  width: 100%;
+  height: 100%;
+  background-image: var(--image-url);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+/* -------------------------------------------------- */
+/* PREMIUM MODERN CARD UI (Airbnb-style)              */
+/* -------------------------------------------------- */
+
+/* Bottom dark gradient overlay */
+.img::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 40%,
+    rgba(0, 0, 0, 0.55) 85%
+  );
+}
+
+/* Content placed at bottom-left */
+.cardContent {
+  position: absolute;
+  bottom: 18px;
+  left: 18px;
+  right: 18px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  /* No glass now — using bottom fade like sample */
+  background: rgba(0, 0, 0, 0);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+/* Title — clean, classy, premium */
+.cardTitle {
+  font-family: var(--font-saira);
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: white;
+
+  /* smooth glow */
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.45);
+
+  margin: 0;
+}
+
+/* Subtitle — soft and readable */
+.cardDesc {
+  font-family: var(--font-saira);
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.35rem;
+  max-width: 90%;
+  margin: 0;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+}
+
+/* Optional mini tags like sample (Reserve now, 4.5 stars...) */
+.cardTags {
+  margin-top: 8px;
+  display: flex;
+  gap: 8px;
+}
+
+.cardTag {
+  padding: 6px 12px;
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: white;
+  backdrop-filter: blur(10px);
+}
+
+
+.cardTitle {
+  font-family: var(--font-pacifico);
+  font-size: 1.55rem;
+  letter-spacing: 0.4px;
+  color: white;
+  font-weight: 600;
+  text-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+  margin: 0;
+}

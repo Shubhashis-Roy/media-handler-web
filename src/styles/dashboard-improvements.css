@@ -1,0 +1,426 @@
+/* ============================================================ */
+/* DASHBOARD IMPROVEMENTS - SPACING & ALIGNMENT FIXES           */
+/* ============================================================ */
+
+/* ============================================================ */
+/* CARD COMPONENTS - CONSISTENT SPACING                         */
+/* ============================================================ */
+
+/* shadcn Card component overrides */
+[class*="card"] {
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* CardHeader */
+[class*="card-header"] {
+  padding: 20px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+[class*="card-header"]:last-child {
+  border-bottom: none;
+}
+
+/* CardTitle */
+[class*="card-title"] {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0;
+}
+
+/* CardContent */
+[class*="card-content"] {
+  padding: 20px;
+}
+
+/* CardDescription */
+[class*="card-description"] {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin-top: 4px;
+}
+
+/* ============================================================ */
+/* BUTTON SPACING & ALIGNMENT                                   */
+/* ============================================================ */
+
+button {
+  transition: all 0.2s ease;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* Button groups */
+.button-group {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.button-group-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* ============================================================ */
+/* FORM ELEMENTS - CONSISTENT SPACING                           */
+/* ============================================================ */
+
+input,
+textarea,
+select {
+  transition: all 0.2s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(56, 128, 135, 0.1);
+}
+
+/* Form groups */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.form-group:last-child {
+  margin-bottom: 0;
+}
+
+/* ============================================================ */
+/* GRID & LAYOUT IMPROVEMENTS                                   */
+/* ============================================================ */
+
+/* Consistent gap scale */
+.gap-xs {
+  gap: 4px;
+}
+
+.gap-sm {
+  gap: 8px;
+}
+
+.gap-md {
+  gap: 12px;
+}
+
+.gap-lg {
+  gap: 16px;
+}
+
+.gap-xl {
+  gap: 20px;
+}
+
+.gap-2xl {
+  gap: 24px;
+}
+
+/* Consistent padding scale */
+.p-xs {
+  padding: 4px;
+}
+
+.p-sm {
+  padding: 8px;
+}
+
+.p-md {
+  padding: 12px;
+}
+
+.p-lg {
+  padding: 16px;
+}
+
+.p-xl {
+  padding: 20px;
+}
+
+.p-2xl {
+  padding: 24px;
+}
+
+/* ============================================================ */
+/* SECTION SPACING                                              */
+/* ============================================================ */
+
+section {
+  margin-bottom: 24px;
+}
+
+section:last-child {
+  margin-bottom: 0;
+}
+
+/* Section header */
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  gap: 12px;
+}
+
+.section-header-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.section-header-actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* ============================================================ */
+/* LIST & TABLE IMPROVEMENTS                                    */
+/* ============================================================ */
+
+/* List items */
+.list-item {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.list-item:hover {
+  background: var(--color-surface-muted);
+}
+
+.list-item-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: var(--color-surface-muted);
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+.list-item-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.list-item-title {
+  font-weight: 500;
+  color: var(--color-text);
+  margin-bottom: 2px;
+}
+
+.list-item-subtitle {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+.list-item-action {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+/* ============================================================ */
+/* BADGE & TAG IMPROVEMENTS                                     */
+/* ============================================================ */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.badge-primary {
+  background: rgba(56, 128, 135, 0.1);
+  color: var(--color-primary);
+}
+
+.badge-success {
+  background: rgba(76, 175, 80, 0.1);
+  color: var(--color-success);
+}
+
+.badge-warning {
+  background: rgba(230, 161, 0, 0.1);
+  color: var(--color-warning);
+}
+
+.badge-danger {
+  background: rgba(230, 57, 70, 0.1);
+  color: var(--color-danger);
+}
+
+/* ============================================================ */
+/* EMPTY STATE                                                  */
+/* ============================================================ */
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  text-align: center;
+  border-radius: 12px;
+  background: var(--color-surface-muted);
+  border: 1px dashed var(--color-border);
+}
+
+.empty-state-icon {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 16px;
+  opacity: 0.5;
+}
+
+.empty-state-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 8px;
+}
+
+.empty-state-description {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin-bottom: 16px;
+}
+
+/* ============================================================ */
+/* LOADING & SKELETON                                           */
+/* ============================================================ */
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--color-surface-muted) 25%,
+    var(--color-border) 50%,
+    var(--color-surface-muted) 75%
+  );
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* ============================================================ */
+/* RESPONSIVE IMPROVEMENTS                                      */
+/* ============================================================ */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .section-header-actions {
+    width: 100%;
+  }
+
+  .section-header-actions button {
+    flex: 1;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .button-group {
+    flex-direction: column;
+  }
+
+  .button-group button {
+    width: 100%;
+  }
+
+  .list-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .list-item-icon {
+    margin-right: 0;
+    margin-bottom: 8px;
+    width: 100%;
+  }
+
+  .list-item-action {
+    width: 100%;
+    margin-top: 8px;
+  }
+
+  .list-item-action button {
+    flex: 1;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .section-header-title {
+    font-size: 1.125rem;
+  }
+
+  .empty-state {
+    padding: 24px 16px;
+  }
+
+  .empty-state-icon {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+/* ============================================================ */
+/* ACCESSIBILITY IMPROVEMENTS                                   */
+/* ============================================================ */
+
+/* Focus visible for keyboard navigation */
+*:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: more) {
+  .sidebar-item--active {
+    border-width: 2px;
+  }
+
+  button {
+    border-width: 2px;
+  }
+}
