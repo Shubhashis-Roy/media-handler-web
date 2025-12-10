@@ -1,0 +1,93 @@
+/* ----------------------------------------------------------- */
+/* TAILWIND V4 CORE SETUP                                      */
+/* ----------------------------------------------------------- */
+@reference utilities;
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "react-day-picker/dist/style.css";
+@custom-variant dark (&:is(.dark *));
+
+/* ----------------------------------------------------------- */
+/* YOUR CUSTOM DESIGN SYSTEM (LIGHT + DARK)                    */
+/* ----------------------------------------------------------- */
+
+/* LIGHT MODE */
+:root {
+  --font-pacifico: "Pacifico", cursive;
+  --font-saira: "Saira", sans-serif;
+
+  /* Brand */
+  --color-primary: #388087;
+  --color-secondary: #6fb3b8;
+  --color-accent: #badfe7;
+  --color-muted: #c2edce;
+
+  /* Backgrounds */
+  --color-bg: #f6f6f2;
+  --color-surface: #ffffff;
+  --color-surface-muted: #f1f3f3;
+
+  /* Text */
+  --color-text: #0a0a0a;
+  --color-text-muted: #5b5b5b;
+
+  /* Borders */
+  --color-border: #d6d6d6;
+
+  /* Semantic */
+  --color-success: #4caf50;
+  --color-warning: #e6a100;
+  --color-danger: #e63946;
+}
+
+/* DARK MODE */
+.dark {
+  --color-primary: #003135;
+  --color-secondary: #024950;
+  --color-accent: #964734;
+  --color-muted: #0fa4af;
+
+  --color-bg: #000000;
+  --color-surface: #112427;
+  --color-surface-muted: #143135;
+
+  --color-text: #e8f5f8;
+  --color-text-muted: #9ab9be;
+
+  --color-border: #2a3a3d;
+
+  --color-success: #4cd964;
+  --color-warning: #f5c451;
+  --color-danger: #ff6b6b;
+}
+
+/* ----------------------------------------------------------- */
+/* BASE LAYER                                                  */
+/* ----------------------------------------------------------- */
+@layer base {
+  body {
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-saira);
+  }
+}
+
+/* ----------------------------------------------------------- */
+/* FONT HELPERS                                                */
+/* ----------------------------------------------------------- */
+.font-pacifico {
+  font-family: var(--font-pacifico);
+}
+
+.font-saira {
+  font-family: var(--font-saira);
+}
+
+/* ----------------------------------------------------------- */
+/* OPTIONAL — GLOBAL RESET                                     */
+/* ----------------------------------------------------------- */
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+}

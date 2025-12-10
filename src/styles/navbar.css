@@ -1,0 +1,568 @@
+/* ===================================================== */
+/* MEDIA MANAGER — PREMIUM NAVBAR CSS (2025 Ultra Polished Edition)
+/* Fully updated for your React component                  */
+/* ===================================================== */
+
+/* ░░░░ MAIN NAVBAR ░░░░ */
+.acc-nav {
+  width: 100%;
+  height: 72px;
+
+  background: rgba(255, 255, 255, 0.75) !important;
+  backdrop-filter: blur(14px) saturate(180%);
+  -webkit-backdrop-filter: blur(14px);
+
+  border-bottom: 1px solid var(--color-border);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  z-index: 9999;
+  transition: all 0.25s ease;
+}
+
+.dark .acc-nav {
+  background: rgba(17, 36, 39, 0.75) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Inner container */
+.acc-inner {
+  width: 93%;
+  max-width: 1500px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 22px;
+  height: 100%;
+  position: relative; /* Essential for mobile search positioning */
+}
+
+/* ░░░░ LOGO ░░░░ */
+.acc-logo {
+  font-size: 1.85rem;
+  font-weight: 700;
+  letter-spacing: -0.8px;
+  text-decoration: none;
+
+  color: var(--color-text) !important;
+  transition: opacity 0.2s ease;
+}
+
+.acc-logo:hover {
+  opacity: 0.8;
+}
+
+.acc-logo span {
+  color: var(--color-primary) !important;
+}
+
+.dark .acc-logo span {
+  color: var(--color-accent) !important;
+}
+
+/* ░░░░ CENTER NAV LINKS ░░░░ */
+.acc-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+
+  transition: opacity 0.25s ease, width 0.25s ease;
+}
+
+.acc-item {
+  position: relative;
+  font-size: 0.98rem;
+  font-weight: 500;
+
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  cursor: pointer;
+  transition: color 0.25s;
+}
+
+.acc-item:hover {
+  color: var(--color-primary) !important;
+}
+
+.dark .acc-item:hover {
+  color: var(--color-accent) !important;
+}
+
+/* HIDE WHEN SEARCH OPEN */
+.hide-nav {
+  opacity: 0;
+  width: 0 !important;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* ░░░░ RIGHT ACTIONS (Icons + Profile) ░░░░ */
+.acc-actions {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+
+  position: relative;
+  z-index: 20;
+}
+
+.acc-icon {
+  cursor: pointer;
+  color: var(--color-text);
+  opacity: 0.85;
+
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.acc-icon:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* ░░░░ LANGUAGE DROPDOWN ░░░░ */
+.acc-lang-wrapper {
+  position: relative;
+}
+
+.acc-lang-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  background: transparent;
+  border: none;
+  cursor: pointer;
+
+  font-size: 0.95rem;
+  font-weight: 500;
+
+  color: var(--color-text);
+  opacity: 0.9;
+
+  transition: opacity 0.2s ease;
+}
+
+.acc-lang-btn:hover {
+  opacity: 1;
+}
+
+.acc-lang-menu {
+  position: absolute;
+  top: 44px;
+  right: 0;
+
+  width: 150px;
+  padding: 10px 0;
+
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+
+  animation: fadeUp 0.28s ease;
+  z-index: 9999;
+}
+
+.dark .acc-lang-menu {
+  background: var(--color-surface-muted);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.acc-lang-menu p {
+  padding: 10px 18px;
+  font-size: 0.9rem;
+  cursor: pointer;
+
+  color: var(--color-text);
+  transition: all 0.25s ease;
+}
+
+.acc-lang-menu p:hover {
+  background: var(--color-primary);
+  color: white;
+}
+
+/* ░░░░ LOGIN BUTTON (Clean Modern) ░░░░ */
+.acc-login-btn {
+  padding: 8px 18px;
+
+  background: var(--color-primary);
+  color: white;
+  border-radius: 10px;
+
+  font-weight: 600;
+  border: none;
+
+  height: 40px;
+  font-size: 0.92rem;
+
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.acc-login-btn:hover {
+  transform: translateY(-1px);
+  background: var(--color-secondary);
+}
+
+/* ░░░░ INLINE SEARCH BAR (Glass 2025 Style) ░░░░ */
+.nav-search-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.nav-search-bar {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 10px; /* Align to top with offset instead of vertical centering */
+  z-index: 25;
+  width: 520px; /* Default desktop width */
+
+  pointer-events: auto;
+}
+
+.nav-search-inner {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  padding: 12px 18px;
+  height: 52px;
+
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid var(--color-border);
+  border-radius: 18px;
+
+  backdrop-filter: blur(18px) saturate(200%);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+
+  transition: all 0.3s ease;
+}
+
+.dark .nav-search-inner {
+  background: rgba(22, 28, 30, 0.72);
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+}
+
+.nav-search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+
+  font-size: 1rem;
+  font-weight: 500;
+  background: transparent;
+
+  color: var(--color-text);
+}
+
+.nav-search-input::placeholder {
+  color: var(--color-text-muted);
+  opacity: 0.6;
+}
+
+.nav-search-close {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+
+  color: var(--color-text);
+  opacity: 0.75;
+
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.nav-search-close:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* ░░░░ PROFILE & DROPDOWNS ░░░░ */
+.absolute-dropdown {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+
+  overflow: hidden;
+  z-index: 9999;
+}
+
+.dark .absolute-dropdown {
+  background: var(--color-surface-muted);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+}
+
+.drop-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  font-size: 0.92rem;
+  color: var(--color-text);
+  text-decoration: none;
+  transition: background 0.2s;
+  width: 100%;
+  text-align: left;
+}
+
+.drop-item:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.dark .drop-item:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* ░░░░ SUB NAVBAR ░░░░ */
+.acc-subnav {
+  width: 100%;
+  height: 56px;
+
+  background: var(--color-secondary) !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.dark .acc-subnav {
+  background: #024950 !important;
+}
+
+.acc-subnav-inner {
+  width: 92%;
+  max-width: 1500px;
+
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.acc-subnav-inner::-webkit-scrollbar {
+  display: none;
+}
+
+.acc-subnav-inner a {
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+  white-space: nowrap;
+
+  opacity: 0.92;
+  transition: opacity 0.25s, transform 0.25s;
+}
+
+.acc-subnav-inner a:hover {
+  opacity: 1;
+}
+
+/* ░░░░ ANIMATIONS ░░░░ */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ░░░░ RESPONSIVE FIXES (Critical Bug Fix Area) ░░░░ */
+
+/* Fix dropdown expanding full-screen on mobile */
+.acc-item.group .absolute {
+  max-height: 260px;
+  overflow-y: auto;
+}
+
+/* Fix dropdown alignment on mobile */
+@media (max-width: 900px) {
+  .acc-item.group .absolute {
+    left: 0 !important;
+    transform: none !important;
+    width: 200px !important;
+  }
+}
+
+/* Fix search bar breaking layout on mobile */
+@media (max-width: 900px) {
+  .acc-links {
+    display: none;
+  }
+
+  /* Make wrapper static so absolute child references acc-inner */
+  .nav-search-wrapper {
+    position: static;
+  }
+
+  .nav-search-bar {
+    left: auto !important;
+    right: 12px !important;
+    top: 10px !important; /* Align to top with small offset */
+    transform: none !important;
+    
+    /* Width calculation: 100% of container - approx logo width (180px) */
+    width: calc(100% - 170px) !important;
+    max-width: none !important;
+    z-index: 100;
+  }
+}
+
+
+/* ===================================================== */
+/* MOBILE NAVIGATION — HAMBURGER + SLIDE PANEL (2025)    */
+/* ===================================================== */
+
+/* Show hamburger ONLY below 900px */
+.hamburger-btn {
+  background: transparent;
+  border: none;
+  color: var(--color-text);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.hamburger-btn:hover {
+  transform: scale(1.1);
+  opacity: 0.9;
+}
+
+@media (min-width: 900px) {
+  .hamburger-btn {
+    display: none;
+  }
+}
+
+/* PANEL OVERLAY */
+.mobile-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(3px);
+  z-index: 9990;
+}
+
+/* SLIDE PANEL */
+.mobile-menu-panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 78%;
+  max-width: 320px;
+  height: 100vh;
+
+  background: var(--color-surface);
+  border-right: 1px solid var(--color-border);
+
+  box-shadow: 4px 0 30px rgba(0, 0, 0, 0.25);
+
+  padding: 24px;
+  padding-top: 70px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+
+  z-index: 9999;
+}
+
+.dark .mobile-menu-panel {
+  background: var(--color-surface-muted);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 4px 0 35px rgba(0, 0, 0, 0.6);
+}
+
+/* HEADER INSIDE MOBILE PANEL */
+.mobile-menu-header {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mobile-menu-header button {
+  background: transparent;
+  border: none;
+  color: var(--color-text);
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.mobile-menu-header button:hover {
+  opacity: 1;
+  transform: rotate(90deg);
+}
+
+/* NAV LINKS INSIDE PANEL */
+.mobile-menu-links {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding-top: 20px;
+}
+
+.mobile-menu-links a {
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 600;
+
+  color: var(--color-text);
+  opacity: 0.9;
+}
+
+.mobile-login-btn {
+    width: 100%;
+    padding: 12px;
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.mobile-logout-btn {
+    width: 100%;
+    padding: 12px;
+    background: transparent;
+    border: 1px solid var(--color-destructive);
+    color: var(--color-destructive);
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+}

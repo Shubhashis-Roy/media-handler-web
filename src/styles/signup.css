@@ -1,0 +1,165 @@
+/* -------------------------------------------------------------- */
+/* SIGNUP PAGE WRAPPER */
+/* -------------------------------------------------------------- */
+.signup-container {
+  background: var(--color-bg);
+  color: var(--color-text);
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+/* -------------------------------------------------------------- */
+/* SIGNUP CARD — WIDER + PREMIUM */
+/* -------------------------------------------------------------- */
+.signup-card {
+  width: 100%;
+  max-width: 520px; /* ⬅️ INCREASED WIDTH */
+  padding: 38px; /* slightly bigger spacing */
+  background: var(--color-surface);
+  border-radius: 22px;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-soft);
+  animation: fadeUp 0.5s ease;
+  backdrop-filter: blur(18px) saturate(180%);
+}
+
+/* Dark Mode */
+.dark .signup-card {
+  background: rgba(20, 20, 20, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
+}
+
+/* -------------------------------------------------------------- */
+/* TITLE */
+/* -------------------------------------------------------------- */
+.signup-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 26px;
+  text-align: center;
+  color: var(--color-primary);
+  font-family: var(--font-pacifico); /* ⬅️ Pacifico font */
+  letter-spacing: -0.5px;
+}
+
+/* -------------------------------------------------------------- */
+/* FORM GROUP */
+/* -------------------------------------------------------------- */
+.signup-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.signup-group label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--color-text-muted);
+  letter-spacing: -0.2px;
+}
+
+/* -------------------------------------------------------------- */
+/* INPUT FIELDS */
+/* -------------------------------------------------------------- */
+.signup-group input {
+  padding: 14px 18px;
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface-muted);
+  color: var(--color-text);
+  font-size: 1.05rem;
+  outline: none;
+  transition: 0.25s ease;
+}
+
+.signup-group input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 4px rgba(var(--color-primary-rgb), 0.25);
+}
+
+/* Dark Mode Input */
+.dark .signup-group input {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* -------------------------------------------------------------- */
+/* PASSWORD FIELD + EYE ICON */
+/* -------------------------------------------------------------- */
+.password-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.password-wrapper input {
+  padding-right: 48px;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  padding: 4px;
+  opacity: 0.75;
+  transition: 0.2s ease;
+}
+
+.password-toggle .eye-icon {
+  width: 22px;
+  height: 22px;
+  color: var(--color-text-muted);
+}
+
+.dark .password-toggle .eye-icon {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.password-toggle:hover .eye-icon {
+  color: var(--color-primary);
+  opacity: 1;
+}
+
+/* -------------------------------------------------------------- */
+/* SIGNUP BUTTON */
+/* -------------------------------------------------------------- */
+.signup-btn {
+  width: 100%;
+  background: linear-gradient(
+    135deg,
+    var(--color-primary),
+    var(--color-secondary)
+  );
+  color: white;
+  padding: 15px;
+  border-radius: 16px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+  cursor: pointer;
+  border: none;
+  margin-top: 6px;
+  transition: 0.25s ease;
+  box-shadow: var(--shadow-heavy);
+}
+
+.signup-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.25);
+}
+
+/* -------------------------------------------------------------- */
+/* ANIMATION */
+/* -------------------------------------------------------------- */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

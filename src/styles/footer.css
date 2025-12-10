@@ -1,0 +1,34 @@
+/* -------------------------------------------------------------- */
+/* FOOTER                                                         */
+/* -------------------------------------------------------------- */
+
+.footer-wrapper {
+  background: var(--color-surface-muted);
+  position: relative;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Top glow bar */
+.footer-glow {
+  height: 4px;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(var(--color-primary-rgb), 0.4),
+    rgba(var(--color-primary-rgb), 0.15)
+  );
+  filter: blur(1px);
+}
+
+/* Social icons */
+.footer-icon {
+  width: 26px;
+  height: 26px;
+  color: var(--color-text-muted);
+  transition: 0.25s ease;
+}
+
+.footer-icon:hover {
+  color: var(--color-primary);
+  transform: translateY(-3px) scale(1.1);
+}
